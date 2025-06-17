@@ -8,6 +8,7 @@ $db = 'surveyjs';
 $user = 'root';
 $pass = '';
 
+// this is a comment
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

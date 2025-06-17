@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Financial Awareness</title>
+  <meta name="viewport" content="width=device-width" />
+  <script src="https://unpkg.com/jquery"></script>
+
+  <!-- React and Babel -->
+  <script src="https://unpkg.com/react@16.5.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.5.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.2.5/babel.min.js"></script>
+
+  <!-- SurveyJS React -->
+  <script src="https://unpkg.com/survey-core@1.9.0/survey.core.min.js"></script>
+  <script src="https://unpkg.com/survey-react@1.9.0/survey.react.min.js"></script>
+
+  <link href="https://unpkg.com/survey-core@1.9.0/modern.min.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+
+  <style>
+    [name="Type_of_City"] {
+      pointer-events: none;
+      /* Optional: indicate disabled */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="surveyElement" style="width: 100%"></div>
+  <div id="surveyResult"></div>
+
+  <!-- Main Survey script -->
+  <script type="text/babel" src="index.js"></script>
+  <script>
+    function blockBack() {
+      history.pushState(null, null, location.href);
+      window.onpopstate = function () {
+        alert("Going Bqck");
+
+        history.go(1);
+      };
+    }
+
+    window.onload = blockBack();
+
+  </script>
+</body>
+
+</html>
